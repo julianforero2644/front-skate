@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <title>Front Final</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es un documento HTML5">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="misestilos.css">
+    <script type="text/javascript" src="js/misFuncionesSkates.js"></script>
+  </head>
+
+  <body>
+    <header id="cabeceralogo">
+      <div>
+        <h1>Skates
+        </h1>
+      </div>
+    </header>
+
+    <nav id="menuprincipal">
+      <div>
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="Reportes.html">Reportes</a>
+          </li>
+          <li>
+            <a href="Categorias.html">Categorias</a>
+          </li>
+          <li>
+            <a href="Clientes.html">Clientes</a>
+          </li>
+          <li>
+            <a href="Mensajes.html">Mensajes</a>
+          </li>
+          <li>
+            <a href="Reservaciones.html">Reservaciones</a>
+          </li>
+          <li>
+            <a href="Skate.html">Skates</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row row-cols-1">
+
+        <form>
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="Sname2" placeholder="escribe el nombre">
+          </div>
+          <div class="form-group">
+            <label for="model">Modelo:</label>
+            <input class="form-control" type="text" id="Sbrand" placeholder="escribe la marca">
+          </div>
+          <div class="form-group">
+            <label for="ano">Año:</label>
+            <input class="form-control" type="number" id="Syear" placeholder="escribe solo el año">
+          </div>
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <input class="form-control" type="text" id="Sdescription2" placeholder="escribe la descripción">
+          </div>
+
+          <div class="form-group">
+            <label for="select-client">Categoría</label>
+            <select class="form-control" id="select-category"></select>
+            <script type="text/javascript">window.onload = autoInicioCategoria();
+            </script>
+          </div>
+
+          <br>
+          <button type="button" class="btn btn-primary" onclick="agregarSkate()">Guardar Skate</button>
+
+          <br>
+        </form>
+        <div id="miListaSkate"></div>
+        <script type="text/javascript">
+          window.onload = traerInformacionSkate();
+        </script>
+
+      </div>
+    </div>
+
+    <!-- <div id="miListaSkate"></div>
+        <script type="text/javascript">
+          window.onload = traerInformacionSkate();
+        </script> -->
+
+    <!-- <label>NAME:</label> 
+      <input class="controlSkate" type="text" id="name2" placeholder="escribe el nombre"><br> 
+      <label>MODEL:</label> 
+      <input class="controlSkate" type="text" id="brand" placeholder="escribe la marca"><br> 
+      <label>YEAR:</label> 
+      <input class="controlSkate" type="number" id="year" placeholder="escribe solo el año"><br> 
+      <label>DESCRIPTION:</label> 
+      <input class="controlSkate" type="text" id="description2" placeholder="escribe la descripcion"><br> 
+      <select id="select-category"></select> 
+      <script type="text/javascript"> window.onload = autoInicioCategoria(); </script> 
+      <div id="miListaSkate"></div> 
+      <button type="button" class="btn btn-primary" onclick="traerInformacionSkate()">Consultar Skate</button> 
+      <button onclick="agregarSkate()">Guardar Skate</button> -->
+
+  </body>
+
+</html>
