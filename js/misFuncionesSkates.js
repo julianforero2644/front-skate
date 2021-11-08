@@ -131,10 +131,9 @@ function agregarSkate () {
         $ ('#Sbrand').val ('');
         $ ('#Syear').val ('');
         $ ('#Sdescription2').val ('');
-
         //Listar Tabla
-
         alert ('Se ha guardado Correctamente!');
+        window.location.reload ();
       },
       error: function (jqXHR, textStatus, errorThrown) {
         alert ('No se Guardo Correctamente');
@@ -198,18 +197,18 @@ function borrar (idElemento) {
 
   var dataToSend = JSON.stringify (elemento);
   console.log (dataToSend);
-  $.ajax ({
-    dataType: 'json',
-    data: dataToSend,
+  $.ajax ({    
     url: 'http://150.230.77.201:8080/api/Skate/' + idElemento,
     //url: "http://localhost:8080/api/Skate/" + idElemento,
     type: 'DELETE',
+    data: dataToSend,
     contentType: 'application/JSON',
+    datatype: 'JSON',
     success: function (response) {
       console.log (response);
       $ ('#miListaSkate').empty ();
-      traerInformacionSkate();
-      alert ('se ha Eliminado Correctamente!');
+      traerInformacionSkate();     
+      alert ('se ha Eliminado Correctamente!');      
     },
 
     error: function (jqXHR, textStatus, errorThrown) {

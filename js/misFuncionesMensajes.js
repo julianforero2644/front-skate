@@ -43,23 +43,39 @@ function autoInicioMensajes () {
 }
 
 function pintarRespuestaMensajes (respuesta) {
-  let myTable = '<table>';
+  let myTable =
+    '<br><table class="table table-striped table-bordered table-hover table-dark">';
+  myTable += '<thead>';
+  myTable += '<tr>';
+  myTable += '<th scope="col">' + 'ID' + '</th>';
+  myTable += '<th scope="col">' + 'NOMBRE SKATE' + '</th>';
+  myTable += '<th scope="col">' + 'NOMBRE CLIENTE' + '</th>';
+  myTable += '<th scope="col">' + 'MENSAJE' + '</th>';
+  myTable += '<th scope="col">' + '' + '</th>';
+  myTable += '<th scope="col">' + '' + '</th>';
+  myTable += '</tr>';
+  myTable += '</thead>';
+  myTable += '<tbody>';
+
+
+
   for (i = 0; i < respuesta.length; i++) {
     myTable += '<tr>';
-
-    myTable += '<td>' + respuesta[i].messageText + '</td>';
+    myTable += '<td>' + respuesta[i].id + '</td>';    
     myTable += '<td>' + respuesta[i].skate.name + '</td>';
     myTable += '<td>' + respuesta[i].client.name + '</td>';
+    myTable += '<td>' + respuesta[i].messageText + '</td>';
     myTable +=
-      "<td> <button onclick=' actualizarInformacionMensaje(" +
+      "<td> <button type='button' class='btn btn-success' onclick=' actualizarInformacionMensaje(" +
       respuesta[i].idMessage +
       ")'>Actualizar</button>";
     myTable +=
-      "<td> <button onclick='borrarMensaje(" +
+      "<td> <button type='button' class='btn btn-danger' onclick='borrarMensaje(" +
       respuesta[i].idMessage +
       ")'>Borrar</button>";
     myTable += '</tr>';
   }
+  myTable += '</tbody>';
   myTable += '</table>';
   $ ('#resultadoMensajes').html (myTable);
 }

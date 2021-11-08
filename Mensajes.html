@@ -53,27 +53,26 @@
 
       <div class="row row-cols-1">
 
-        <form>
-          <div class="form-group">
-            <label for="mensaje">Mensaje</label>
-            <input type="text" class="form-control" id="messagetext" placeholder="mensaje">
-          </div>        
+        <form>                 
           
           <div class="form-group">
-            <label for="select-client">Cliente</label>
+            <label for="select-client">Cliente:</label>
             <select class="form-control" id="select-client"></select>            
               <script type="text/javascript">
                 window.onload = autoInicioRelacionCliente();
               </script>            
           </div>
           <div class="form-group">
-            <label for="select-client">Skate</label>
+            <label for="select-client">Skate:</label>
             <select class="form-control" id="select-skate"></select>
             <script type="text/javascript">
               window.onload = autoInicioSkate();
             </script>
-
           </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <input type="text" class="form-control" id="messagetext" placeholder="mensaje">
+          </div> 
           <br>
           <button type="button" class="btn btn-primary" onclick="guardarInformacionMensajes()">Guardar Mensajes</button>
           <br>
