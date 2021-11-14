@@ -89,14 +89,21 @@ function listarReservation () {
 }
 
 function pintarRespuestaReservation (response) {
-  let myTable = '<table>';
+  let myTable =
+    '<br><table class="table table-striped table-bordered table-hover table-dark">';
+  myTable += '<thead>';
   myTable += '<tr>';
-  myTable += '<td>Fecha Inicio</td>';
-  myTable += '<td>fecha Devolucion</td>';
-  myTable += '<td>Estado</td>';
-  myTable += '<td>Patineta</td>';
-  myTable += '<td>Cliente</td>';
-  ('</tr>');
+  myTable += '<th scope="col">' + 'FECHA INICIO' + '</th>';
+  myTable += '<th scope="col">' + 'FECHA DEVOLUCIÓN' + '</th>';
+  myTable += '<th scope="col">' + 'ESTADO' + '</th>';
+  myTable += '<th scope="col">' + 'SKATE' + '</th>';
+  myTable += '<th scope="col">' + 'CLIENTE' + '</th>';
+  myTable += '<th scope="col">' + '' + '</th>';
+  myTable += '<th scope="col">' + '' + '</th>';
+  myTable += '<th scope="col">' + '' + '</th>';
+  myTable += '</tr>';
+  myTable += '</thead>';
+  myTable += '<tbody>';
 
   for (i = 0; i < response.length; i++) {
     myTable += '<tr>';
@@ -105,20 +112,32 @@ function pintarRespuestaReservation (response) {
     myTable += '<td>' + response[i].status + '</td>';
     myTable += '<td>' + response[i].skate.name + '</td>';
     myTable += '<td>' + response[i].client.name + '</td>';
+    
     myTable +=
-      '<td><button  onclick="borrarReservation(' +
-      response[i].idReservation +
-      ')">Borrar Reserva!</button></td>';
+      "<td><button type='button' class='btn btn-success' onclick='cargarDatosReservation(" +
+      response[i].idReservation +")'>Editar Reserva!</button></td>";
+    // myTable +=
+    //   '<td><button  onclick="cargarDatosReservation(' +
+    //   response[i].idReservation +
+    //   ')">Editar Reserva!</button></td>';
+
     myTable +=
-      '<td><button  onclick="cargarDatosReservation(' +
-      response[i].idReservation +
-      ')">Editar Reserva!</button></td>';
+      "<td> <button type='button' class='btn btn-secondary' onclick='actualizarReservation(" +
+      response[i].idReservation +")'>Actualizar Reserva!</button></td>";
+    // myTable +=
+    //   '<td><button  onclick="actualizarReservation(' +
+    //   response[i].idReservation +
+    //   ')">Actualizar Reserva!</button></td>';
     myTable +=
-      '<td><button  onclick="actualizarReservation(' +
-      response[i].idReservation +
-      ')">Actualizar Reserva!</button></td>';
+      "<td><button type='button' class='btn btn-danger onclick='borrarReservation(" +
+      response[i].idReservation +")'>Borrar Reserva!</button></td>";
+    // myTable +=
+    //   '<td><button  onclick="borrarReservation(' +
+    //   response[i].idReservation +
+    //   ')">Borrar Reserva!</button></td>';
     myTable += '</tr>';
   }
+  myTable += '</tbody>';
   myTable += '</table>';
   $ ('#miListaReservation').html (myTable);
 }
